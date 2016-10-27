@@ -1,0 +1,9 @@
+docker create \
+  --name=couchpotato \
+  -p 5050:5050 \
+  --restart=always \
+  -e PUID=1024 -e PGID=100 \
+  -v /nfsmounts/docker/couchpotato:/config \
+  -v /nfsmounts/downloads:/downloads \
+  -v /nfsmounts/movies/Downloaded:/movies \
+  linuxserver/couchpotato

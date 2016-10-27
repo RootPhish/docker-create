@@ -1,0 +1,10 @@
+docker create \
+  --name=plex \
+  --net=host \
+  --restart=always \
+  -e VERSION=latest \
+  -e PUID=1024 -e PGID=100 \
+  -v /nfsmounts/docker/plexconfig:/config \
+  -v /nfsmounts/series:/data/tvshows \
+  -v /nfsmounts/movies:/data/movies \
+  linuxserver/plex

@@ -1,0 +1,9 @@
+docker create \
+  --name=sickrage \
+  -p 8081:8081 \
+  --restart=always \
+  -e PUID=1024 -e PGID=100 \
+  -v /nfsmounts/docker/sickrageconfig:/config \
+  -v /nfsmounts/downloads:/downloads \
+  -v /nfsmounts/series:/tv \
+  linuxserver/sickrage

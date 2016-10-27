@@ -1,0 +1,6 @@
+docker create \
+  --name=domoticz \
+  -p 8080:8080 \
+  --restart=always \
+  -v /nfsmounts/docker/domoticz:/config \
+  c5791a470aef

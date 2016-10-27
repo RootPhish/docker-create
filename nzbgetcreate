@@ -1,0 +1,8 @@
+docker create \
+  --name=nzbget \
+  -p 6789:6789 \
+  --restart=always \
+  -e PUID=1024 -e PGID=100 \
+  -v /nfsmounts/docker/nzbgetconfig:/config \
+  -v /nfsmounts/downloads:/downloads \
+  linuxserver/nzbget
