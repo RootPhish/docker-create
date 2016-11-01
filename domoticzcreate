@@ -3,4 +3,8 @@ docker create \
   -p 8080:8080 \
   --restart=always \
   -v /nfsmounts/docker/domoticz:/config \
+  -v /etc/localtime:/etc/localtime:ro \
+  --device=/dev/ttyUSB-AEON \
+  --device=/dev/ttyUSB-P1 \
+  --device=/dev/ttyUSB-RFX433 \
   domoticz-sma
